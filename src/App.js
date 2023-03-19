@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./views/Home";
+import Pokes from "./views/Pokes";
 
-function App() {
+function Main() {    
+  
+  //border border-3 border-primar
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="containery">       
+        <BrowserRouter>
+          <header><NavBar /></header>
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pokes/:name" element={<Pokes />} />            
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Routes>
+        </BrowserRouter>      
     </div>
   );
 }
 
-export default App;
+export default Main;
