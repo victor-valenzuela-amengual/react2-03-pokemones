@@ -1,21 +1,18 @@
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import arc from '../superheros.json'
 
-const Pokes = () => {
-    const url = "https://pokeapi.co/api/v2/pokemon";
+const Superheroes = () => {
+    const url = './superheros.json'    
     const navigate = useNavigate();
-    const [dataPokemon, setDataPokemon] = useState([]);
-    const { name } = useParams();
-
-    const PokemonData = async (e) => {
-        let urlPokemon = `${url}/${name === 'default' ? 'charmander' : name}`;
-        const request = await fetch(urlPokemon);
-
+    const [dataHero, setDataHero] = useState({});
+    
+    const HeroData = async (e) => {        
+        const request = await fetch(url);
         await request
             .json()
             .then((data) => {
-                setDataPokemon(data);
+                setDataHero(data);
 
             })
             .catch((err) => {
@@ -24,24 +21,21 @@ const Pokes = () => {
     }
     const BackHome = (e) => {
         e.preventDefault();
-        navigate("/react2-03-pokemones");
+        navigate("/");
     }
     useEffect(() => {
-        PokemonData();
+        HeroData();
     }, []);
-
+    console.log(dataHero);
     return (
         <>
-            <div className='d-flex flex-row justify-content-center gap-4 bg-secondary'>
-                <div >
-                    <img src={dataPokemon.sprites === undefined
-                        ? "" : dataPokemon.sprites.other.dream_world.front_default} />
-                </div>
-                <ul>
-                    <h5>{dataPokemon.name}</h5>
-                    <li> Experiencia: {dataPokemon.base_experience}</li>
+            <div className='d-flex flex-row justify-content-center gap-4 bg-secondary'>               
+                <h5>{dataHero.name}</h5>
+                {/* <ul>
+                    <h5>{dataHero.name}</h5>
+                    <li> Experiencia: {dataHero.base_experience}</li>
                     <h6 className="mt-2 mb-0">Habilidades</h6>
-                    {dataPokemon.abilities === undefined ? '-' : dataPokemon.abilities.map((pok, index) => {
+                    {dataHero.abilities === undefined ? '-' : dataHero.abilities.map((pok, index) => {
                         return (
                             <li>
                                 {pok.ability.name}
@@ -49,14 +43,14 @@ const Pokes = () => {
                         );
                     })}                    
                     <h6 className="mt-2 mb-0">Tipos</h6>
-                    {dataPokemon.types === undefined ? '-' : dataPokemon.types.map((pok, index) => {
+                    {dataHero.types === undefined ? '-' : dataHero.types.map((pok, index) => {
                         return (
                             <li>
                                 {pok.type.name}
                             </li>
                         );
                     })}
-                </ul>
+                </ul> */}
             </div>
             <div className='d-flex flex-row justify-content-center '>
                 <button type="submit" className="btn btn-primary btn-sm mt-3"
@@ -66,4 +60,4 @@ const Pokes = () => {
         </>
     );
 };
-export default Pokes;
+export default Superheroes;

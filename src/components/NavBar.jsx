@@ -12,14 +12,14 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) => (isActive ? "active" : undefined)}
-                    to="/">
+                    to="/react2-03-pokemones">
                     Home
                 </NavLink>
                 <NavLink
                     className={({ isActive }) => (isActive ? "active" : undefined) + " ms-4"} 
                     to="/pokes/default">
                     Pokemones
-                </NavLink>               
+                </NavLink>                                 
             </nav>
         </div>
     );
