@@ -23,7 +23,7 @@ const Pokes = () => {
             })
     }
     const BackHome = (e) => {
-        e.preventDefault();
+        e.preventDefault();        
         navigate("/react2-03-pokemones");
     }
     useEffect(() => {
@@ -43,7 +43,7 @@ const Pokes = () => {
                     <h6 className="mt-2 mb-0">Habilidades</h6>
                     {dataPokemon.abilities === undefined ? '-' : dataPokemon.abilities.map((pok, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 {pok.ability.name}
                             </li>
                         );
@@ -51,7 +51,7 @@ const Pokes = () => {
                     <h6 className="mt-2 mb-0">Tipos</h6>
                     {dataPokemon.types === undefined ? '-' : dataPokemon.types.map((pok, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 {pok.type.name}
                             </li>
                         );

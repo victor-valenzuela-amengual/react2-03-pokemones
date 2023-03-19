@@ -21,8 +21,10 @@ const Home = () => {
     }
 
     const PokemonData = (e) => {
-        e.preventDefault();        
-        navigate(`/pokes/${nombrePoke}`);       
+        e.preventDefault();      
+        console.log(nombrePoke);
+        if(nombrePoke!="")
+            navigate(`/pokes/${nombrePoke}`);
     }
     useEffect(() => {
         ListarPokemones();
@@ -52,7 +54,7 @@ const Home = () => {
                         );
                     })}
                 </select>
-                <button type="submit" className="btn btn-primary btn-sm mt-3"
+                <button type="submit" className="btn btn-primary btn-sm mt-3 mb-3 ms-3"
                     onClick={(e) => { PokemonData(e) }}>Ver Detalles</button>
             </form>
         </div>
