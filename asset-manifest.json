@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react2-03-pokemones/static/css/main.9ebe7346.css",
+    "main.js": "/react2-03-pokemones/static/js/main.f2610ff6.js",
+    "static/media/pokehome.png": "/react2-03-pokemones/static/media/pokehome.08df7596ef478ffd7d18.png",
+    "index.html": "/react2-03-pokemones/index.html",
+    "main.9ebe7346.css.map": "/react2-03-pokemones/static/css/main.9ebe7346.css.map",
+    "main.f2610ff6.js.map": "/react2-03-pokemones/static/js/main.f2610ff6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ebe7346.css",
+    "static/js/main.f2610ff6.js"
+  ]
+}
