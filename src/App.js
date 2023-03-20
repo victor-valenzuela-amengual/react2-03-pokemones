@@ -12,7 +12,7 @@ function App() {
           <header><NavBar /></header>
           
           <Routes>
-            <Route path="/react2-03-pokemones" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/pokes/:name" element={<Pokes />} />                        
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>

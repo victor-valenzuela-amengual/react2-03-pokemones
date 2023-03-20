@@ -24,7 +24,7 @@ const Pokes = () => {
     }
     const BackHome = (e) => {
         e.preventDefault();        
-        navigate("/react2-03-pokemones");
+        navigate("/");
     }
     useEffect(() => {
         PokemonData();

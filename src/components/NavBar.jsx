@@ -12,7 +12,7 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) => (isActive ? "active" : undefined)}
-                    to="/react2-03-pokemones">
+                    to="/">
                     Home
                 </NavLink>
                 <NavLink
